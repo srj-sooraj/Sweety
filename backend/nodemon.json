@@ -1,0 +1,20 @@
+{
+  "script": "server.js",
+  "watch": [
+    "config",
+    "controllers",
+    "middleware",
+    "routes",
+    "services",
+    "utils",
+    "validation",
+    "app.js",
+    "server.js"
+  ],
+  "ext": "js,json",
+  "ignore": [
+    "tests/*",
+    "node_modules/*",
+    "prisma/migrations/*"
+  ]
+}

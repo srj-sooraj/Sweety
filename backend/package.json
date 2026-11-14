@@ -1,0 +1,51 @@
+{
+  "name": "sweety-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sweety – Blood Glucose Tracker Express & Prisma backend API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "prisma:generate": "prisma generate",
+    "prisma:validate": "prisma validate",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:deploy": "prisma migrate deploy",
+    "db:seed": "node prisma/seed.js",
+    "test": "node --test --test-concurrency=1 tests/*.test.js"
+  },
+  "nodemonConfig": {
+    "script": "server.js",
+    "watch": [
+      "config",
+      "controllers",
+      "middleware",
+      "routes",
+      "services",
+      "utils",
+      "validation",
+      "app.js",
+      "server.js"
+    ],
+    "ext": "js,json",
+    "ignore": [
+      "tests/*",
+      "node_modules/*",
+      "prisma/migrations/*"
+    ]
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.10",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
+    "jsonwebtoken": "^9.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14",
+    "prisma": "^6.19.3",
+    "supertest": "^7.2.2"
+  }
+}
